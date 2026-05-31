@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekty — atearch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="projekty">
+
+<div id="site-header"></div>
+
+<div class="page active" id="page-projekty">
+
+  <section class="proj-hero" style="background-image: linear-gradient(rgba(26,24,20,0.78), rgba(26,24,20,0.9)), url('Foto/pexels-marina-zvada-844583049-34573691.jpg'); background-size: cover; background-position: center;">
+    <div class="proj-hero-left">
+      <div class="proj-hero-counter">8</div>
+      <div class="proj-hero-h">PORTFÓLIO<br><span>PROJEKTOV</span></div>
+    </div>
+    <div class="proj-hero-right">
+      <p class="proj-hero-desc">Každý projekt je jedinečný — od rodinného domu v horskej krajine po sakrálnu stavbu, od rekonštrukcie bistro-baru po chatu v prírode.</p>
+      <div class="proj-type-row">
+        <div class="proj-type-stat"><div class="pts-n">4</div><div class="pts-l">novostavby</div></div>
+        <div class="proj-type-stat"><div class="pts-n">3</div><div class="pts-l">rekonštrukcie</div></div>
+        <div class="proj-type-stat"><div class="pts-n">1</div><div class="pts-l">sakrálna</div></div>
+        <div class="proj-type-stat"><div class="pts-n">2</div><div class="pts-l">komercia</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">Všetky projekty</button>
+    <button class="filter-btn" onclick="filterProjects('novostavba', this)">Novostavby</button>
+    <button class="filter-btn" onclick="filterProjects('rekonstrukcia', this)">Rekonštrukcie</button>
+    <button class="filter-btn" onclick="filterProjects('komercia', this)">Komercia</button>
+    <button class="filter-btn" onclick="filterProjects('sakralna', this)">Sakrálne</button>
+    <button class="filter-btn" onclick="filterProjects('rekrkreacia', this)">Rekreácia</button>
+  </div>
+
+  <!-- Gallery -->
+  <section class="gallery-section">
+    <div class="gallery-grid" id="gallery-grid">
+
+      <div class="gallery-item wide" data-cat="novostavba">
+        <div class="gi-img"><img src="Foto/pexels-freestockpro-12932834.jpg" alt="Rodinný dom Podhorie — novostavba v horskom prostredí"></div>
+        <div class="gi-body">
+          <div class="gi-type">001 — Novostavba · Rodinný dom</div>
+          <div class="gi-title">Rodinný dom Podhorie</div>
+          <div class="gi-desc">Štúdia a projekt novostavby rodinného domu. Čistá forma v dialógu s horskou krajinou a okolitým prostredím.</div>
+          <div class="gi-tags">
+            <span class="gi-tag">novostavba</span>
+            <span class="gi-tag">rodinný dom</span>
+            <span class="gi-tag">štúdia + projekt</span>
+            <span class="gi-tag">horské prostredie</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="komercia rekonstrukcia">
+        <div class="gi-img"><img src="Foto/pexels-katerynahnidash-31314176.jpg" alt="Bistro Nesluša — interiér"></div>
+        <div class="gi-body">
+          <div class="gi-type">002 — Rekonštrukcia · Komercia</div>
+          <div class="gi-title">Bistro Nesluša</div>
+          <div class="gi-desc">Štúdia rekonštrukcie moderného bistro-baru s lokálnym charakterom a čistým interiérovým konceptom.</div>
+          <div class="gi-tags"><span class="gi-tag">komercia</span><span class="gi-tag">rekonštrukcia</span><span class="gi-tag">interiér</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="novostavba">
+        <div class="gi-img"><img src="Foto/pexels-lena-goncharova-78970252-8692688.jpg" alt="Rodinný dom Nesluša — novostavba na svahovitom teréne"></div>
+        <div class="gi-body">
+          <div class="gi-type">003 — Novostavba · Rodinný dom</div>
+          <div class="gi-title">Rodinný dom Nesluša</div>
+          <div class="gi-desc">Štúdia a projekt novostavby rodinného domu. Premyslená dispozícia na mierne svahovitom teréne.</div>
+          <div class="gi-tags"><span class="gi-tag">novostavba</span><span class="gi-tag">rodinný dom</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="komercia">
+        <div class="gi-img"><img src="Foto/pexels-manishjangid-31922898.jpg" alt="Akváriá a teráriá Mirage Žilina — interiér prevádzky"></div>
+        <div class="gi-body">
+          <div class="gi-type">004 — Komercia · Interiér</div>
+          <div class="gi-title">Akváriá &amp; teráriá Mirage Žilina</div>
+          <div class="gi-desc">Technický návrh akvárii a štúdia terárií pre prevádzku Mirage. Špeciálne riešenie pre komerčnú prevádzku.</div>
+          <div class="gi-tags"><span class="gi-tag">komercia</span><span class="gi-tag">technický návrh</span><span class="gi-tag">interiér</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="sakralna novostavba">
+        <div class="gi-img"><img src="Foto/pexels-darya-grey_owl-132130036-18976599.jpg" alt="Kaplnka a odpočívadlo Raková–Staškov — novostavba"></div>
+        <div class="gi-body">
+          <div class="gi-type">005 — Sakrálna stavba</div>
+          <div class="gi-title">Kaplnka &amp; odpočívadlo Raková–Staškov</div>
+          <div class="gi-desc">Štúdia novostavby kaplnky s odpočívadlom. Tiché miesto v krajine — jednoduchosť formy ako zámer.</div>
+          <div class="gi-tags"><span class="gi-tag">sakrálna</span><span class="gi-tag">novostavba</span><span class="gi-tag">verejný priestor</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="rekonstrukcia">
+        <div class="gi-img"><img src="Foto/pexels-kseniachernaya-5691530.jpg" alt="Rodinný dom Bytča-Hrabové — rekonštrukcia interiéru"></div>
+        <div class="gi-body">
+          <div class="gi-type">006 — Rekonštrukcia · Rodinný dom</div>
+          <div class="gi-title">Rodinný dom Bytča-Hrabové</div>
+          <div class="gi-desc">Štúdia a projekt rekonštrukcie rodinného domu. Modernizácia s rešpektom k pôvodnému charakteru.</div>
+          <div class="gi-tags"><span class="gi-tag">rekonštrukcia</span><span class="gi-tag">rodinný dom</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="rekrkreacia novostavba">
+        <div class="gi-img"><img src="Foto/pexels-adrien-olichon-1257089-33590057.jpg" alt="Chata Povina — drevená novostavba v lese"></div>
+        <div class="gi-body">
+          <div class="gi-type">007 — Rekreácia · Novostavba</div>
+          <div class="gi-title">Chata Povina</div>
+          <div class="gi-desc">Štúdia a projekt novostavby horskej chaty. Úsporná forma v plnom súlade s prírodou a okolím.</div>
+          <div class="gi-tags"><span class="gi-tag">rekreácia</span><span class="gi-tag">novostavba</span><span class="gi-tag">horská stavba</span></div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="rekonstrukcia">
+        <div class="gi-img"><img src="Foto/pexels-vladimirsrajber-30053435.jpg" alt="Rodinný dom Bytča — dokončená realizácia rekonštrukcie"></div>
+        <div class="gi-body">
+          <div class="gi-type">008 — Rekonštrukcia · Realizácia</div>
+          <div class="gi-title">Rodinný dom Bytča</div>
+          <div class="gi-desc">Štúdia a projekt rekonštrukcie s výraznou premenou dispozície. Dokončená realizácia.</div>
+          <div class="gi-tags"><span class="gi-tag">rekonštrukcia</span><span class="gi-tag">realizácia</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="no-results" style="display:none; text-align:center; padding:4rem 2rem; color:var(--muted); font-size:12px; letter-spacing:0.1em; text-transform:uppercase;">
+      Žiadne projekty v tejto kategórii
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div>
+      <div class="cta-strip-h">MÁTE PROJEKT<br>NA MYSLI?</div>
+      <div class="cta-strip-sub">Napíšte nám — každý projekt začína rozhovorom.</div>
+    </div>
+    <a class="cta-strip-btn" href="kontakt.html">Kontaktovať →</a>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

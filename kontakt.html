@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — atearch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400;1,600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="kontakt">
+
+<div id="site-header"></div>
+
+<div class="page active" id="page-kontakt">
+
+  <section class="kontakt-hero">
+    <div class="kontakt-hero-left">
+      <div class="onas-hero-kicker" style="margin-bottom:2rem; font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--green);">:at — Sme k dispozícii</div>
+      <h1 class="kontakt-h">KONTAKT<br>UJ<br><span>NÁS</span></h1>
+      <p class="kontakt-sub">Tvoríme v každom prostredí a čase. Prvý krok je váš — napíšte nám alebo zavolajte. Konzultácia je nezáväzná.</p>
+      <div class="kontakt-info-grid">
+        <div class="ki-item">
+          <div class="ki-icon"><i class="ti ti-phone" aria-hidden="true"></i></div>
+          <div class="ki-body">
+            <div class="ki-label">Telefón</div>
+            <div class="ki-val"><a href="tel:+421907504456">+421 907 504 456</a></div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+          <div class="ki-body">
+            <div class="ki-label">E-mail</div>
+            <div class="ki-val"><a href="mailto:info@atearch.sk">info@atearch.sk</a></div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+          <div class="ki-body">
+            <div class="ki-label">Adresa kancelárie</div>
+            <div class="ki-val">Nesluša 139, 023 41 Nesluša</div>
+          </div>
+        </div>
+        <div class="ki-item">
+          <div class="ki-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+          <div class="ki-body">
+            <div class="ki-label">Dostupnosť</div>
+            <div class="ki-val">Po–Pi, 8:00 – 18:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kontakt-hero-right">
+      <div class="form-title">NAPÍŠTE NÁM</div>
+      <form class="form-grid" id="contact-form" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Meno a priezvisko *</label>
+            <input class="form-input" type="text" placeholder="Ján Novák" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-mail *</label>
+            <input class="form-input" type="email" placeholder="jan@email.sk" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Telefón</label>
+            <input class="form-input" type="tel" placeholder="+421 9xx xxx xxx">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Typ projektu</label>
+            <select class="form-select">
+              <option value="" style="background:#111">Vybrať...</option>
+              <option style="background:#111">Rodinný dom – novostavba</option>
+              <option style="background:#111">Rodinný dom – rekonštrukcia</option>
+              <option style="background:#111">Interiér</option>
+              <option style="background:#111">Komerčná stavba</option>
+              <option style="background:#111">Konzultácia</option>
+              <option style="background:#111">Iné</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Správa *</label>
+          <textarea class="form-textarea" placeholder="Opíšte váš projekt alebo otázku..." required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="form-submit">Odoslať správu →</button>
+        </div>
+        <div class="form-success" id="form-success">
+          <i class="ti ti-check" style="margin-right:8px;"></i> Správa bola odoslaná. Ozveme sa do 24 hodín.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="hours-section">
+    <div class="hours-item">
+      <div class="hours-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+      <div class="hours-label">Pracovné hodiny</div>
+      <div class="hours-val">8:00–18:00</div>
+      <div class="hours-note">Pondelok – Piatok</div>
+    </div>
+    <div class="hours-item">
+      <div class="hours-icon"><i class="ti ti-phone" aria-hidden="true"></i></div>
+      <div class="hours-label">Telefón</div>
+      <div class="hours-val">0907 504 456</div>
+      <div class="hours-note">Volajte kedykoľvek v pracovnom čase</div>
+    </div>
+    <div class="hours-item">
+      <div class="hours-icon"><i class="ti ti-mail" aria-hidden="true"></i></div>
+      <div class="hours-label">E-mail</div>
+      <div class="hours-val" style="font-size:18px; padding-top:4px;">info@atearch.sk</div>
+      <div class="hours-note">Odpoveď do 24 hodín</div>
+    </div>
+    <div class="hours-item">
+      <div class="hours-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+      <div class="hours-label">Adresa</div>
+      <div class="hours-val" style="font-size:18px; padding-top:4px;">Nesluša 139</div>
+      <div class="hours-note">023 41 Nesluša</div>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <i class="ti ti-map-2" aria-hidden="true"></i>
+    <span>Nesluša 139, 023 41 Nesluša — Google Maps</span>
+  </div>
+
+</div>
+
+<div id="site-footer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
