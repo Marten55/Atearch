@@ -775,13 +775,12 @@ footer {
   justify-content: center;
   text-align: center;
   padding: 1.5rem 1rem;
-  border: 1px solid var(--green2);
-  background: rgba(61, 122, 53, 0.08);
+  border: 1px solid #252520;
   gap: 8px;
   transition: background 0.25s, transform 0.25s;
 }
 .proj-type-stat:hover {
-  background: rgba(61, 122, 53, 0.18);
+  background: rgba(61, 122, 53, 0.12);
   transform: translateY(-3px);
 }
 .pts-n {
