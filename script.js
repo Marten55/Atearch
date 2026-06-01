@@ -29,49 +29,72 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadPartial('site-header', 'header.html');
   await loadPartial('site-footer', 'footer.html');
   markActiveNav();
-  initScrollReveal();
+  initCounters();
 });
 
-// ---- SCROLL REVEAL ANIMÁCIE ----
-// Automaticky označí kľúčové prvky triedou .reveal a sleduje ich vstup
-// do viewportu cez IntersectionObserver. Netreba upravovať HTML.
-function initScrollReveal() {
-  // používateľ si neželá animácie -> nič nerobíme
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  // prvky, ktoré chceme animovať pri scrollovaní
-  const selectors = [
-    '.section-head', '.svc-item', '.hp-card', '.hp-view-all',
-    '.cta-strip', '.gallery-item', '.tl-item', '.val-item',
-    '.ska-left', '.ska-right', '.ki-item', '.hours-item',
-    '.kontakt-hero-right', '.pd-params', '.pd-desc', '.pd-ph', '.pd-nav',
-    '.proj-type-stat', '.onas-hero-text', '.timeline-section .tl-aside'
-  ];
-  const els = document.querySelectorAll(selectors.join(','));
+// ---- POČÍTADLÁ ČÍSEL ----
+// Čísla v štatistikách (15+ rokov, 8 projektov, 168 m² ...) narátajú
+// od 0 po cieľovú hodnotu, keď prvok vojde do viewportu.
+// Funguje automaticky — parsuje hodnotu z textu, zachová prefix/suffix.
+function initCounters() {
+  const els = Array.from(document.querySelectorAll('.hm-n, .pts-n, .pd-param-val'));
   if (!els.length) return;
 
-  els.forEach(el => el.classList.add('reveal'));
-
-  // stagger pre súrodencov v rámci spoločného rodiča (mriežky)
-  const groups = new Map();
+  // pre každý prvok zisti, či obsahuje číslo; ak nie (napr. "Žilina & SR"), preskoč
+  const targets = [];
   els.forEach(el => {
-    const parent = el.parentElement;
-    if (!groups.has(parent)) groups.set(parent, 0);
-    const i = groups.get(parent);
-    if (i >= 1 && i <= 4) el.classList.add('d' + i);
-    groups.set(parent, i + 1);
+    // ber len čistý textový obsah na úrovni prvku (kvôli <span> sufixom ako "+")
+    const raw = el.textContent.trim();
+    const match = raw.match(/^(\D*)(\d[\d\s]*)(.*)$/s);
+    if (!match) return;                       // žiadne číslo -> nechaj tak
+    const value = parseInt(match[2].replace(/\s/g, ''), 10);
+    if (isNaN(value)) return;
+    targets.push({
+      el,
+      prefix: match[1],
+      value,
+      suffix: match[3].replace(/\s+/g, ' '),  // napr. " m²" alebo "+"
+      done: false
+    });
   });
+  if (!targets.length) return;
 
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animate(t) {
+    if (t.done) return;
+    t.done = true;
+    if (reduce) {                             // bez animácie -> rovno finálna hodnota
+      t.el.textContent = t.prefix + t.value + t.suffix;
+      return;
+    }
+    const duration = 1400;
+    const start = performance.now();
+    const easeOut = p => 1 - Math.pow(1 - p, 3);
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const current = Math.round(easeOut(p) * t.value);
+      t.el.textContent = t.prefix + current + t.suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // skry sufixové <span> deti — prepisujeme textContent celého prvku
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        const t = targets.find(x => x.el === entry.target);
+        if (t) animate(t);
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  }, { threshold: 0.4 });
 
-  els.forEach(el => observer.observe(el));
+  targets.forEach(t => {
+    t.el.textContent = t.prefix + '0' + t.suffix; // začni od 0
+    observer.observe(t.el);
+  });
 }
 
 // ---- FILTER PROJEKTOV (stránka Projekty) ----
