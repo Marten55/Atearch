@@ -339,32 +339,6 @@ footer {
 }
 .hero-btns { display: flex; gap: 1rem; }
 
-/* MARQUEE */
-.marquee-strip {
-  border-top: 2px solid var(--dark);
-  border-bottom: 2px solid var(--dark);
-  background: var(--dark);
-  padding: 0.8rem 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.marquee-inner {
-  display: inline-flex;
-  gap: 3rem;
-  animation: marquee 28s linear infinite;
-}
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.marquee-inner span {
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #3d3a35;
-}
-.marquee-inner b { color: var(--green2); font-weight: 400; }
-
 /* SERVICES */
 .services { padding: 5rem 2rem; border-bottom: 2px solid var(--dark); }
 .services-grid {
