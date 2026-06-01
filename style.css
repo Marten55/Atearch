@@ -257,13 +257,6 @@ footer {
   text-transform: uppercase;
   color: var(--green2);
 }
-.hero-counter {
-  font-family: var(--font-disp);
-  font-size: 150px;
-  color: #252520;
-  line-height: 1;
-  user-select: none;
-}
 .hero-year-block { }
 .hero-since {
   font-size: 9px;
@@ -704,12 +697,6 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.proj-hero-counter {
-  font-family: var(--font-disp);
-  font-size: 120px;
-  color: #252520;
-  line-height: 1;
 }
 .proj-hero-h {
   font-family: var(--font-disp);
