@@ -20,8 +20,8 @@ body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--dark);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 a { text-decoration: none; color: inherit; }
@@ -189,7 +189,7 @@ footer {
 .footer-tagline {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   margin-bottom: 1.25rem;
   line-height: 1.5;
@@ -203,7 +203,7 @@ footer {
 }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
 .footer-col ul li a {
-  font-size: 12px;
+  font-size: 13px;
   color: #555;
   transition: color 0.2s;
   letter-spacing: 0.04em;
@@ -213,7 +213,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 12px;
+  font-size: 13px;
   color: #555;
   margin-bottom: 0.75rem;
 }
@@ -397,7 +397,7 @@ footer {
   margin-bottom: 0.75rem;
 }
 .svc-text {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -449,7 +449,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 .hp-sub {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
   letter-spacing: 0.06em;
   margin-bottom: 1rem;
@@ -587,7 +587,7 @@ footer {
   margin-bottom: 1.5rem;
 }
 .tl-aside-text {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -616,7 +616,7 @@ footer {
   margin-bottom: 0.4rem;
 }
 .tl-detail {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -654,7 +654,7 @@ footer {
   letter-spacing: 0.04em;
 }
 .val-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #555;
   line-height: 1.8;
 }
@@ -687,7 +687,7 @@ footer {
   margin-bottom: 1.5rem;
 }
 .ska-text {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   line-height: 1.8;
 }
@@ -709,7 +709,7 @@ footer {
   gap: 1rem;
   padding: 0.85rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 14px;
   color: var(--dark);
 }
 .services-list li:last-child { border-bottom: none; }
@@ -851,7 +851,7 @@ footer {
   margin-bottom: 0.4rem;
   line-height: 1.25;
 }
-.gi-desc { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 0.85rem; }
+.gi-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 0.85rem; }
 .gi-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .gi-tag {
   font-size: 8px;
@@ -961,7 +961,7 @@ footer {
   color: var(--white);
   padding: 0.85rem 1rem;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 15px;
   transition: border-color 0.2s;
   outline: none;
   width: 100%;
@@ -993,7 +993,7 @@ footer {
   background: var(--green);
   border: 1px solid var(--green2);
   padding: 1rem 1.5rem;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--white);
   margin-top: 1rem;
 }
@@ -1048,7 +1048,7 @@ footer {
   color: var(--dark);
   letter-spacing: 0.04em;
 }
-.hours-note { font-size: 11px; color: var(--muted); }
+.hours-note { font-size: 13px; color: var(--muted); }
 
 /* ===================== OBRAZKY V KARTACH ===================== */
 .hp-img img,
