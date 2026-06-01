@@ -29,8 +29,51 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadPartial('site-header', 'header.html');
   await loadPartial('site-footer', 'footer.html');
   markActiveNav();
+  initScrollReveal();
   initCounters();
 });
+
+// ---- SCROLL REVEAL ANIMÁCIE ----
+// Automaticky označí kľúčové prvky triedou .reveal a sleduje ich vstup
+// do viewportu cez IntersectionObserver. Netreba upravovať HTML.
+function initScrollReveal() {
+  // používateľ si neželá animácie -> nič nerobíme
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // prvky, ktoré chceme animovať pri scrollovaní
+  const selectors = [
+    '.section-head', '.svc-item', '.hp-card', '.hp-view-all',
+    '.cta-strip', '.gallery-item', '.tl-item', '.val-item',
+    '.ska-left', '.ska-right', '.ki-item', '.hours-item',
+    '.kontakt-hero-right', '.pd-params', '.pd-desc', '.pd-ph', '.pd-nav',
+    '.proj-type-stat', '.onas-hero-text', '.timeline-section .tl-aside'
+  ];
+  const els = document.querySelectorAll(selectors.join(','));
+  if (!els.length) return;
+
+  els.forEach(el => el.classList.add('reveal'));
+
+  // stagger pre súrodencov v rámci spoločného rodiča (mriežky)
+  const groups = new Map();
+  els.forEach(el => {
+    const parent = el.parentElement;
+    if (!groups.has(parent)) groups.set(parent, 0);
+    const i = groups.get(parent);
+    if (i >= 1 && i <= 4) el.classList.add('d' + i);
+    groups.set(parent, i + 1);
+  });
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  els.forEach(el => observer.observe(el));
+}
 
 // ---- POČÍTADLÁ ČÍSEL ----
 // Čísla v štatistikách (15+ rokov, 8 projektov, 168 m² ...) narátajú
