@@ -76,6 +76,7 @@ nav {
   gap: 2rem;
   padding: 0 2rem;
   height: 64px;
+  overflow: hidden;
 }
 .nav-logo {
   font-family: var(--font-disp);
@@ -89,12 +90,15 @@ nav {
   display: flex;
   list-style: none;
   justify-content: center;
+  align-items: center;
+  height: 64px;
   gap: 0;
 }
+.nav-links li,
+.nav-links li a { height: 100%; }
 .nav-links li a {
   display: block;
   padding: 0 1.5rem;
-  height: 64px;
   line-height: 64px;
   font-size: 10px;
   letter-spacing: 0.18em;
