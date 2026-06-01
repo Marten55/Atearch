@@ -1052,24 +1052,19 @@ footer {
   margin-top: 1rem;
 }
 
-/* MAPA placeholder */
+/* MAPA */
 .map-section {
-  height: 300px;
+  height: 420px;
   background: var(--dark);
   border-top: 2px solid var(--dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.75rem;
-  color: #3d3a35;
+  line-height: 0;
 }
-.map-section i { font-size: 58px; color: #252520; }
-.map-section span {
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #3d3a35;
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: grayscale(0.3) contrast(1.05);
 }
 
 /* HOURS section */
