@@ -579,9 +579,11 @@ footer {
   margin-bottom: 1.5rem;
 }
 .tl-aside-text {
-  font-size: 17px;
-  color: var(--muted);
-  line-height: 1.8;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--dark);
+  line-height: 1.7;
 }
 .tl-list { }
 .tl-item {
