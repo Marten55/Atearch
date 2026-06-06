@@ -523,7 +523,7 @@ footer {
   margin-bottom: 2rem;
   text-align: center;
 }
-.onas-hero-h span { color: var(--green); }
+.onas-hero-h span { color: var(--green); margin-left: 0.25em; }
 .onas-hero-text {
   font-family: var(--font-serif);
   font-size: 18px;
