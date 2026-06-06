@@ -521,6 +521,7 @@ footer {
   letter-spacing: 0.03em;
   color: var(--dark);
   margin-bottom: 2rem;
+  text-align: center;
 }
 .onas-hero-h span { color: var(--green); }
 .onas-hero-text {
