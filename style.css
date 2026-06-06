@@ -437,9 +437,10 @@ footer {
   margin-bottom: 0.5rem;
 }
 .hp-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: 16px;
   color: var(--muted);
-  letter-spacing: 0.06em;
   margin-bottom: 1rem;
 }
 .hp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
@@ -610,6 +611,8 @@ footer {
   margin-bottom: 0.4rem;
 }
 .tl-detail {
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: 17px;
   color: var(--muted);
   line-height: 1.7;
@@ -893,7 +896,7 @@ footer {
   max-height: 220px;
   transform: translateY(0);
 }
-.gi-desc { font-size: 15px; color: rgba(245,241,232,0.85); line-height: 1.6; margin-top: 0.6rem; margin-bottom: 0.85rem; }
+.gi-desc { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: rgba(245,241,232,0.85); line-height: 1.6; margin-top: 0.6rem; margin-bottom: 0.85rem; }
 .gi-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .gi-tag {
   font-size: 10px;
@@ -1197,6 +1200,8 @@ footer {
 }
 .pd-desc-head span { color: var(--green); }
 .pd-desc-body p {
+  font-family: var(--font-serif);
+  font-style: italic;
   font-size: 17px;
   color: var(--muted);
   line-height: 1.9;
